@@ -29,5 +29,5 @@ setup(
         'Programming Language :: Python :: Implementation :: CPython',
     ],
     include_package_data=True,
-    install_requires=['django>=1.8', 'pyoffers'],
+    install_requires=['django>=1.9', 'pyoffers'],
 )
