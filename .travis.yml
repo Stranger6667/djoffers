@@ -2,8 +2,12 @@ language: python
 python:
   - 3.5
 env:
-  - TOX_ENV=py34
-  - TOX_ENV=py35
+  - TOX_ENV=django_19-py34
+  - TOX_ENV=django_19-py35
+  - TOX_ENV=django_110-py34
+  - TOX_ENV=django_110-py35
+  - TOX_ENV=django_master-py34
+  - TOX_ENV=django_master-py35
 install:
   - travis_retry pip install tox
 script:
