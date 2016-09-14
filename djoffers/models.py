@@ -10,7 +10,7 @@ class HasOffersModel(models.Model):
     """
     Basic entity to store on our side. It points to remote HasOffers entity via integer ID.
     """
-    hasoffers_id = models.IntegerField(db_index=True)
+    hasoffers_id = models.IntegerField(unique=True)
 
     hasoffers = HasOffersAPI(ENDPOINT, NETWORK_TOKEN, NETWORK_ID, VERIFY, VERBOSITY)
 
