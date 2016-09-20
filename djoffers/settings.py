@@ -7,12 +7,20 @@ DEFAULT_CONFIG = {
     'NETWORK_TOKEN': None,
     'NETWORK_ID': None,
     'VERIFY': True,
+    'RETRIES': 3,
+    'RETRY_TIMEOUT': 3,
     'VERBOSITY': 0,
 }
 config = getattr(settings, 'HASOFFERS', DEFAULT_CONFIG)
 
-ENDPOINT = config.get('ENDPOINT', DEFAULT_CONFIG['ENDPOINT'])
-NETWORK_TOKEN = config.get('NETWORK_TOKEN', DEFAULT_CONFIG['NETWORK_TOKEN'])
-NETWORK_ID = config.get('NETWORK_ID', DEFAULT_CONFIG['NETWORK_ID'])
-VERIFY = config.get('VERIFY', DEFAULT_CONFIG['VERIFY'])
-VERBOSITY = config.get('VERBOSITY', DEFAULT_CONFIG['VERBOSITY'])
+
+def get_value(key):
+    return config.get(key, DEFAULT_CONFIG[key])
+
+ENDPOINT = get_value('ENDPOINT')
+NETWORK_TOKEN = get_value('NETWORK_TOKEN')
+NETWORK_ID = get_value('NETWORK_ID')
+VERIFY = get_value('VERIFY')
+RETRIES = get_value('RETRIES')
+RETRY_TIMEOUT = get_value('RETRY_TIMEOUT')
+VERBOSITY = get_value('VERBOSITY')

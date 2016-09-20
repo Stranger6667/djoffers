@@ -3,7 +3,7 @@ from django.db import models
 
 from pyoffers.api import HasOffersAPI
 
-from .settings import ENDPOINT, NETWORK_TOKEN, NETWORK_ID, VERIFY, VERBOSITY
+from .settings import ENDPOINT, NETWORK_TOKEN, NETWORK_ID, VERIFY, RETRIES, RETRY_TIMEOUT, VERBOSITY
 
 
 class HasOffersModel(models.Model):
@@ -12,7 +12,15 @@ class HasOffersModel(models.Model):
     """
     hasoffers_id = models.IntegerField(unique=True)
 
-    hasoffers = HasOffersAPI(ENDPOINT, NETWORK_TOKEN, NETWORK_ID, VERIFY, VERBOSITY)
+    hasoffers = HasOffersAPI(
+        endpoint=ENDPOINT,
+        network_token=NETWORK_TOKEN,
+        network_id=NETWORK_ID,
+        verify=VERIFY,
+        retries=RETRIES,
+        retry_timeout=RETRY_TIMEOUT,
+        verbosity=VERBOSITY,
+    )
 
     class Meta:
         abstract = True
