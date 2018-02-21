@@ -1,5 +1,6 @@
 # coding: utf-8
 from django.db import models
+from django.utils.decorators import classproperty
 
 from pyoffers.api import HasOffersAPI
 
@@ -25,9 +26,9 @@ class HasOffersModel(models.Model):
     class Meta:
         abstract = True
 
-    @property
+    @classproperty
     def manager_name(self):
-        return self.__class__.__name__
+        return self.__name__
 
     @property
     def instance(self):
