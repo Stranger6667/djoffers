@@ -1,20 +1,45 @@
 language: python
-python:
-  - 3.5
-env:
-  - TOX_ENV=lint
-  - TOX_ENV=django19-py34
-  - TOX_ENV=django19-py35
-  - TOX_ENV=django110-py34
-  - TOX_ENV=django110-py35
-  - TOX_ENV=django111-py34
-  - TOX_ENV=django111-py35
-  - TOX_ENV=django111-py36
-  - TOX_ENV=django20-py34
-  - TOX_ENV=django20-py35
-  - TOX_ENV=django20-py36
-  - TOX_ENV=django_master-py35
-  - TOX_ENV=django_master-py36
+matrix:
+  include:
+    - python: 3.6
+      env:
+      - TOX_ENV=lint
+    - python: 3.5
+      env:
+      - TOX_ENV=django19-py34
+    - python: 3.5
+      env:
+      - TOX_ENV=django19-py35
+    - python: 3.5
+      env:
+      - TOX_ENV=django110-py34
+    - python: 3.5
+      env:
+      - TOX_ENV=django110-py35
+    - python: 3.5
+      env:
+      - TOX_ENV=django111-py34
+    - python: 3.5
+      env:
+      - TOX_ENV=django111-py35
+    - python: 3.6
+      env:
+      - TOX_ENV=django111-py36
+    - python: 3.5
+      env:
+      - TOX_ENV=django20-py34
+    - python: 3.5
+      env:
+      - TOX_ENV=django20-py35
+    - python: 3.6
+      env:
+      - TOX_ENV=django20-py36
+    - python: 3.5
+      env:
+      - TOX_ENV=django_master-py35
+    - python: 3.6
+      env:
+      - TOX_ENV=django_master-py36
 install:
   - travis_retry pip install tox
 script:
