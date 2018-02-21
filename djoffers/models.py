@@ -26,8 +26,12 @@ class HasOffersModel(models.Model):
         abstract = True
 
     @property
+    def manager_name(self):
+        return self.__class__.__name__
+
+    @property
     def instance(self):
         """
         Convenience wrapper for remote instance. Taken from `pyoffers`.
         """
-        return self.hasoffers._managers[self.__class__.__name__].find_by_id(self.hasoffers_id)
+        return self.hasoffers._managers[self.manager_name].find_by_id(self.hasoffers_id)
