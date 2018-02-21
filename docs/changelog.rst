@@ -3,6 +3,12 @@
 Changelog
 =========
 
+0.1.3 (2018-02-21)
+------------------
+
+- Added ``manager_name`` to allow customization of class names.
+
+
 0.1.2 (2016-09-20)
 ------------------
 
