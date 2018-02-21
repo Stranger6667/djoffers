@@ -6,8 +6,14 @@ env:
   - TOX_ENV=django19-py35
   - TOX_ENV=django110-py34
   - TOX_ENV=django110-py35
-  - TOX_ENV=django_master-py34
+  - TOX_ENV=django111-py34
+  - TOX_ENV=django111-py35
+  - TOX_ENV=django111-py36
+  - TOX_ENV=django20-py34
+  - TOX_ENV=django20-py35
+  - TOX_ENV=django20-py36
   - TOX_ENV=django_master-py35
+  - TOX_ENV=django_master-py36
 install:
   - travis_retry pip install tox
 script:
