@@ -2,6 +2,7 @@ language: python
 python:
   - 3.5
 env:
+  - TOX_ENV=lint
   - TOX_ENV=django19-py34
   - TOX_ENV=django19-py35
   - TOX_ENV=django110-py34
