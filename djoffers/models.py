@@ -11,7 +11,7 @@ class HasOffersModel(models.Model):
     """
     Basic entity to store on our side. It points to remote HasOffers entity via integer ID.
     """
-    hasoffers_id = models.IntegerField(unique=True)
+    hasoffers_id = models.IntegerField(unique=True, null=True)
 
     hasoffers = HasOffersAPI(
         endpoint=ENDPOINT,
@@ -35,4 +35,6 @@ class HasOffersModel(models.Model):
         """
         Convenience wrapper for remote instance. Taken from `pyoffers`.
         """
+        if self.hasoffers_id is None:
+            return None
         return self.hasoffers._managers[self.manager_name].find_by_id(self.hasoffers_id)
