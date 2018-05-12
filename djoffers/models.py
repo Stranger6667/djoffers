@@ -35,8 +35,6 @@ class HasOffersModel(models.Model):
         """
         Convenience wrapper for remote instance. Taken from `pyoffers`.
         """
-        if self.hasoffers_id is None:
-            return None
         return self.manager.find_by_id(self.hasoffers_id)
 
     @property
