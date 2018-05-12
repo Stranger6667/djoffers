@@ -37,4 +37,8 @@ class HasOffersModel(models.Model):
         """
         if self.hasoffers_id is None:
             return None
-        return self.hasoffers._managers[self.manager_name].find_by_id(self.hasoffers_id)
+        return self.manager.find_by_id(self.hasoffers_id)
+
+    @property
+    def manager(self):
+        return self.hasoffers._managers[self.manager_name]
