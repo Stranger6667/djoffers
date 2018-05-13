@@ -35,4 +35,8 @@ class HasOffersModel(models.Model):
         """
         Convenience wrapper for remote instance. Taken from `pyoffers`.
         """
-        return self.hasoffers._managers[self.manager_name].find_by_id(self.hasoffers_id)
+        return self.manager.find_by_id(self.hasoffers_id)
+
+    @property
+    def manager(self):
+        return self.hasoffers._managers[self.manager_name]

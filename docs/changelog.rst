@@ -3,6 +3,12 @@
 Changelog
 =========
 
+Unreleased
+----------
+
+- Added ``manager`` convenience property.
+
+
 0.1.3 (2018-02-21)
 ------------------
 
